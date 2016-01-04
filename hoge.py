@@ -1,10 +1,12 @@
 # -*- coding: utf-8 -*-
 
 
-class Hoge(object):
+# class Hoge(object):
 
-    def __init__(self, v):
-        self.val = v
+#    def __init__(self, v):
+#        self.val = v
 
-    def update(self, v):
-        self.val = v
+#    def update(self, v):
+#        self.val = v
+
+print 'hello'
