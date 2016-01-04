@@ -9,4 +9,4 @@
 #    def update(self, v):
 #        self.val = v
 
-print 'hello'
+echo 'hello'
