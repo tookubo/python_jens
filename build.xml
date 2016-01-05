@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <project name="hoge" basedir="/var/lib/jenkins/workspace/hoge" default="test.py">
   <target name="unit_test">
-    <exce command="python test.py -v"/>
+    <exce command="py.test --junitxml=nosetsets.xml test.py"/>
   </target>
 </project>
