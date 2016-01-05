@@ -1,21 +1,24 @@
 # -*- coding: utf-8 -*-
 
 from hoge import Hoge
-import unittest
+import pytest
 
-class TestHoge1(unittest.TestCase):
+class TestHoge1(object):
 
-    def setUp(self):
-        self.hoge = Hoge(1)
+    def pytest_funcarg__hoge(request):
+        return Hoge(1)
 
-    def test_type(self):
-        self.assertIsInstance(self.hoge, Hoge)
+    def test_type(self, hoge):
+        assert isinstance(hoge, Hoge)
 
-    def test_val(self):
-        self.assertEqual(self.hoge.val, 1)
+    def test_val(self, hoge):
+        assert hoge.val == 1
 
-        self.hoge.update('hoge')
-        self.assertEqual(self.hoge.val, 'hige')
+        hoge.update('hige')
+        assert hoge.val == 'hige'
+
+        hoge.update('hoge')
+        assert hoge.val == 'hige'
 
 if __name__ == '__main__':
-    unittest.main()
+    pytest.main()
